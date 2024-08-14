@@ -1,0 +1,33 @@
+name: example
+description: "An example usage for locale_gen package"
+repository: https://github.com/oquad/locale_gen
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  # locale_gen users must depend on locale_gen_annotation, freezed_annotation and json_annotation
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+  locale_gen_annotation:
+    path: ../locale_gen_annotation
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # locale_gen users must dev depend on locale_gen, build_runner, source_gen, freezed and json_serializable 
+  locale_gen:
+    path: ../locale_gen
+  build_runner: ^2.4.11
+  source_gen: ^1.5.0
+  flutter_lints: ^3.0.0
+  freezed: ^2.5.2
+  json_serializable: ^6.8.0
+
+flutter:
+  uses-material-design: true
