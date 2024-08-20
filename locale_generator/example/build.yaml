@@ -1,12 +1,12 @@
 # Read about `build.yaml` at https://pub.dev/packages/build_config
 global_options:
-  locale_gen:locale_generator:
+  locale_generator:locale_generator:
     runs_before:
       - freezed:freezed
 
 targets:
   $default:
     builders:
-      locale_gen|locale_generator:
+      locale_generator|locale_generator:
         generate_for:
           - lib/*/*locale.dart

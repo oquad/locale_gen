@@ -5,7 +5,8 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.3 <4.0.0'
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.19.4'
 
 dependencies:
   flutter:
@@ -14,16 +15,13 @@ dependencies:
   # locale_gen users must depend on locale_gen_annotation, freezed_annotation and json_annotation
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
-  locale_gen_annotation:
-    path: ../locale_gen_annotation
+  locale_gen_annotation: ^1.0.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   # locale_gen users must dev depend on locale_gen, build_runner, source_gen, freezed and json_serializable 
-  locale_gen:
-    path: ../locale_gen
-  build_runner: ^2.4.11
+  locale_generator: ^1.0.6
   source_gen: ^1.5.0
   flutter_lints: ^3.0.0
   freezed: ^2.5.2

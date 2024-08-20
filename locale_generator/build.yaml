@@ -2,7 +2,7 @@ builders:
   # name of the builder
   locale_generator:
     # library URI containing the builder - maps to `lib/member_count_library_generator.dart`
-    import: "package:locale_gen/builder.dart"
+    import: "package:locale_generator/locale_generator.dart"
     # Name of the function in the above library to call.
     builder_factories: ["localeGenerator"]
     # The mapping from the source extension to the generated file extension
