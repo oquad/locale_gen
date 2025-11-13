@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.6
   # locale_gen users must depend on locale_gen_annotation, freezed_annotation and json_annotation
-  freezed_annotation: 3.0.0
+  freezed_annotation: ^3.0.0
   json_annotation: ^4.9.0
   locale_gen_annotation: ^1.1.0
 
@@ -21,9 +21,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   # locale_gen users must dev depend on locale_gen, build_runner, source_gen, freezed and json_serializable 
-  locale_generator: ^1.1.0
+  locale_generator:
+    path: ../
   flutter_lints: ^3.0.0
-  freezed: 3.0.2
+  freezed: ^3.2.0
   json_serializable: ^6.8.0
 
 
