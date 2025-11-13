@@ -6,12 +6,7 @@ part of 'locale_gen_annotation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$LocaleGenImpl _$$LocaleGenImplFromJson(Map<String, dynamic> json) =>
-    _$LocaleGenImpl(
-      includeUpdate: json['includeUpdate'] as bool?,
-    );
+_LocaleGen _$LocaleGenFromJson(Map<String, dynamic> json) => _LocaleGen();
 
-Map<String, dynamic> _$$LocaleGenImplToJson(_$LocaleGenImpl instance) =>
-    <String, dynamic>{
-      'includeUpdate': instance.includeUpdate,
-    };
+Map<String, dynamic> _$LocaleGenToJson(_LocaleGen instance) =>
+    <String, dynamic>{};

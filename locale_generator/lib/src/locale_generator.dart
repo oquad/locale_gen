@@ -18,30 +18,69 @@ class LocaleGenerator extends GeneratorForAnnotation<LocaleGen> {
     if (definitions.length != 1) {
       return null;
     }
-    final a = definitions.first;
+    final constructor = definitions.first;
 
-    final patchContents = a.children.map((element) {
-      if (element.kind == ElementKind.PARAMETER &&
-          element is ParameterElement) {
-        final suffix =
-            element.type.nullabilitySuffix == NullabilitySuffix.question
-                ? ''
-                : '?';
-        return '${element.type}$suffix ${element.name},';
+    String patchParameterToString(Element element) {
+      if (element.kind != ElementKind.PARAMETER ||
+          element is! ParameterElement) {
+        return '';
       }
-      return '';
-    }).join('\n');
+      final hasJsonKeyIgnore = element.metadata.any((annotation) {
+        final annotationConstructor = annotation.computeConstantValue();
+        final isJsonKey = annotationConstructor?.type
+                ?.getDisplayString(withNullability: false) ==
+            'JsonKey';
+        final hasExcludeFromJson =
+            annotationConstructor?.getField('includeFromJson')?.toBoolValue() ==
+                false;
+        return isJsonKey && hasExcludeFromJson;
+      });
+      if (hasJsonKeyIgnore) {
+        return '';
+      }
+      final suffix =
+          element.type.nullabilitySuffix == NullabilitySuffix.question
+              ? ''
+              : '?';
+      return '${element.type}$suffix ${element.name},';
+    }
+
+    final patchContents =
+        constructor.children.map(patchParameterToString).join('\n');
 
     final originalFile = element.librarySource!.shortName;
     final filenameBase = originalFile.substring(0, originalFile.length - 5);
 
-    final copyWithEntries = a.children.map((element) {
-      if (element.kind == ElementKind.PARAMETER &&
-          element is ParameterElement) {
-        return '${element.name}: patch.${element.name} ?? ${element.name},';
+    String parameterToString(Element element) {
+      if (element.kind != ElementKind.PARAMETER ||
+          element is! ParameterElement) {
+        return '';
       }
-      return '';
-    }).join('\n');
+      final hasJsonKeyIgnore = element.metadata.any((annotation) {
+        final annotationConstructor = annotation.computeConstantValue();
+        final isJsonKey = annotationConstructor?.type
+                ?.getDisplayString(withNullability: false) ==
+            'JsonKey';
+        final hasExcludeFromJson =
+            annotationConstructor?.getField('includeFromJson')?.toBoolValue() ==
+                false;
+        return isJsonKey && hasExcludeFromJson;
+      });
+      if (hasJsonKeyIgnore) {
+        return '';
+      }
+
+      return '${element.name}: patch.${element.name} ?? ${element.name},';
+    }
+
+    String metadataToString(ElementAnnotation annotation) =>
+        annotation.toSource();
+
+    final copyWithEntries =
+        constructor.children.map(parameterToString).join('\n');
+
+    final originalAnnotations =
+        constructor.metadata.map(metadataToString).join('\n');
     return '''
     import 'package:freezed_annotation/freezed_annotation.dart';
     
@@ -51,7 +90,8 @@ class LocaleGenerator extends GeneratorForAnnotation<LocaleGen> {
     part '$filenameBase.lg.g.dart';
 
     @freezed
-    class ${element.name}Patch with _\$${element.name}Patch {
+    abstract class ${element.name}Patch with _\$${element.name}Patch {
+      $originalAnnotations
       const factory ${element.name}Patch({
         $patchContents
       }) = _${element.name}Patch;

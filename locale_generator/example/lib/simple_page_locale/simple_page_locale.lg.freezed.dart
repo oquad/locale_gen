@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,100 +10,77 @@ part of 'simple_page_locale.lg.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-SimplePageLocalePatch _$SimplePageLocalePatchFromJson(
-    Map<String, dynamic> json) {
-  return _SimplePageLocalePatch.fromJson(json);
-}
 
 /// @nodoc
 mixin _$SimplePageLocalePatch {
-  String? get title => throw _privateConstructorUsedError;
-  String? get subtitle => throw _privateConstructorUsedError;
+  String? get title;
+  String? get subtitle;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SimplePageLocalePatchCopyWith<SimplePageLocalePatch> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SimplePageLocalePatchCopyWith<$Res> {
-  factory $SimplePageLocalePatchCopyWith(SimplePageLocalePatch value,
-          $Res Function(SimplePageLocalePatch) then) =
-      _$SimplePageLocalePatchCopyWithImpl<$Res, SimplePageLocalePatch>;
-  @useResult
-  $Res call({String? title, String? subtitle});
-}
-
-/// @nodoc
-class _$SimplePageLocalePatchCopyWithImpl<$Res,
-        $Val extends SimplePageLocalePatch>
-    implements $SimplePageLocalePatchCopyWith<$Res> {
-  _$SimplePageLocalePatchCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of SimplePageLocalePatch
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $SimplePageLocalePatchCopyWith<SimplePageLocalePatch> get copyWith =>
+      _$SimplePageLocalePatchCopyWithImpl<SimplePageLocalePatch>(
+          this as SimplePageLocalePatch, _$identity);
+
+  /// Serializes this SimplePageLocalePatch to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? title = freezed,
-    Object? subtitle = freezed,
-  }) {
-    return _then(_value.copyWith(
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      subtitle: freezed == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SimplePageLocalePatch &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.subtitle, subtitle) ||
+                other.subtitle == subtitle));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, title, subtitle);
+
+  @override
+  String toString() {
+    return 'SimplePageLocalePatch(title: $title, subtitle: $subtitle)';
   }
 }
 
 /// @nodoc
-abstract class _$$SimplePageLocalePatchImplCopyWith<$Res>
-    implements $SimplePageLocalePatchCopyWith<$Res> {
-  factory _$$SimplePageLocalePatchImplCopyWith(
-          _$SimplePageLocalePatchImpl value,
-          $Res Function(_$SimplePageLocalePatchImpl) then) =
-      __$$SimplePageLocalePatchImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SimplePageLocalePatchCopyWith<$Res> {
+  factory $SimplePageLocalePatchCopyWith(SimplePageLocalePatch value,
+          $Res Function(SimplePageLocalePatch) _then) =
+      _$SimplePageLocalePatchCopyWithImpl;
   @useResult
   $Res call({String? title, String? subtitle});
 }
 
 /// @nodoc
-class __$$SimplePageLocalePatchImplCopyWithImpl<$Res>
-    extends _$SimplePageLocalePatchCopyWithImpl<$Res,
-        _$SimplePageLocalePatchImpl>
-    implements _$$SimplePageLocalePatchImplCopyWith<$Res> {
-  __$$SimplePageLocalePatchImplCopyWithImpl(_$SimplePageLocalePatchImpl _value,
-      $Res Function(_$SimplePageLocalePatchImpl) _then)
-      : super(_value, _then);
+class _$SimplePageLocalePatchCopyWithImpl<$Res>
+    implements $SimplePageLocalePatchCopyWith<$Res> {
+  _$SimplePageLocalePatchCopyWithImpl(this._self, this._then);
 
+  final SimplePageLocalePatch _self;
+  final $Res Function(SimplePageLocalePatch) _then;
+
+  /// Create a copy of SimplePageLocalePatch
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? title = freezed,
     Object? subtitle = freezed,
   }) {
-    return _then(_$SimplePageLocalePatchImpl(
+    return _then(_self.copyWith(
       title: freezed == title
-          ? _value.title
+          ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
       subtitle: freezed == subtitle
-          ? _value.subtitle
+          ? _self.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -110,66 +88,92 @@ class __$$SimplePageLocalePatchImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$SimplePageLocalePatchImpl implements _SimplePageLocalePatch {
-  const _$SimplePageLocalePatchImpl({this.title, this.subtitle});
 
-  factory _$SimplePageLocalePatchImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SimplePageLocalePatchImplFromJson(json);
+@JsonSerializable(converters: [])
+class _SimplePageLocalePatch implements SimplePageLocalePatch {
+  const _SimplePageLocalePatch({this.title, this.subtitle});
+  factory _SimplePageLocalePatch.fromJson(Map<String, dynamic> json) =>
+      _$SimplePageLocalePatchFromJson(json);
 
   @override
   final String? title;
   @override
   final String? subtitle;
 
+  /// Create a copy of SimplePageLocalePatch
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SimplePageLocalePatch(title: $title, subtitle: $subtitle)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SimplePageLocalePatchCopyWith<_SimplePageLocalePatch> get copyWith =>
+      __$SimplePageLocalePatchCopyWithImpl<_SimplePageLocalePatch>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SimplePageLocalePatchToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SimplePageLocalePatchImpl &&
+            other is _SimplePageLocalePatch &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.subtitle, subtitle) ||
                 other.subtitle == subtitle));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, title, subtitle);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SimplePageLocalePatchImplCopyWith<_$SimplePageLocalePatchImpl>
-      get copyWith => __$$SimplePageLocalePatchImplCopyWithImpl<
-          _$SimplePageLocalePatchImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SimplePageLocalePatchImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SimplePageLocalePatch(title: $title, subtitle: $subtitle)';
   }
 }
 
-abstract class _SimplePageLocalePatch implements SimplePageLocalePatch {
-  const factory _SimplePageLocalePatch(
-      {final String? title,
-      final String? subtitle}) = _$SimplePageLocalePatchImpl;
-
-  factory _SimplePageLocalePatch.fromJson(Map<String, dynamic> json) =
-      _$SimplePageLocalePatchImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$SimplePageLocalePatchCopyWith<$Res>
+    implements $SimplePageLocalePatchCopyWith<$Res> {
+  factory _$SimplePageLocalePatchCopyWith(_SimplePageLocalePatch value,
+          $Res Function(_SimplePageLocalePatch) _then) =
+      __$SimplePageLocalePatchCopyWithImpl;
   @override
-  String? get title;
-  @override
-  String? get subtitle;
-  @override
-  @JsonKey(ignore: true)
-  _$$SimplePageLocalePatchImplCopyWith<_$SimplePageLocalePatchImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String? title, String? subtitle});
 }
+
+/// @nodoc
+class __$SimplePageLocalePatchCopyWithImpl<$Res>
+    implements _$SimplePageLocalePatchCopyWith<$Res> {
+  __$SimplePageLocalePatchCopyWithImpl(this._self, this._then);
+
+  final _SimplePageLocalePatch _self;
+  final $Res Function(_SimplePageLocalePatch) _then;
+
+  /// Create a copy of SimplePageLocalePatch
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? title = freezed,
+    Object? subtitle = freezed,
+  }) {
+    return _then(_SimplePageLocalePatch(
+      title: freezed == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subtitle: freezed == subtitle
+          ? _self.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

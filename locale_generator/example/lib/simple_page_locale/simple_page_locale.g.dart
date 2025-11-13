@@ -6,15 +6,13 @@ part of 'simple_page_locale.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SimplePageLocaleImpl _$$SimplePageLocaleImplFromJson(
-        Map<String, dynamic> json) =>
-    _$SimplePageLocaleImpl(
+_SimplePageLocale _$SimplePageLocaleFromJson(Map<String, dynamic> json) =>
+    _SimplePageLocale(
       title: json['title'] as String,
       subtitle: json['subtitle'] as String,
     );
 
-Map<String, dynamic> _$$SimplePageLocaleImplToJson(
-        _$SimplePageLocaleImpl instance) =>
+Map<String, dynamic> _$SimplePageLocaleToJson(_SimplePageLocale instance) =>
     <String, dynamic>{
       'title': instance.title,
       'subtitle': instance.subtitle,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,156 +10,63 @@ part of 'locale_gen_annotation.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-LocaleGen _$LocaleGenFromJson(Map<String, dynamic> json) {
-  return _LocaleGen.fromJson(json);
-}
 
 /// @nodoc
 mixin _$LocaleGen {
-  bool? get includeUpdate => throw _privateConstructorUsedError;
-
   /// Serializes this LocaleGen to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of LocaleGen
-  /// with the given fields replaced by the non-null parameter values.
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LocaleGen);
+  }
+
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LocaleGenCopyWith<LocaleGen> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LocaleGenCopyWith<$Res> {
-  factory $LocaleGenCopyWith(LocaleGen value, $Res Function(LocaleGen) then) =
-      _$LocaleGenCopyWithImpl<$Res, LocaleGen>;
-  @useResult
-  $Res call({bool? includeUpdate});
-}
-
-/// @nodoc
-class _$LocaleGenCopyWithImpl<$Res, $Val extends LocaleGen>
-    implements $LocaleGenCopyWith<$Res> {
-  _$LocaleGenCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of LocaleGen
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? includeUpdate = freezed,
-  }) {
-    return _then(_value.copyWith(
-      includeUpdate: freezed == includeUpdate
-          ? _value.includeUpdate
-          : includeUpdate // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'LocaleGen()';
   }
 }
 
 /// @nodoc
-abstract class _$$LocaleGenImplCopyWith<$Res>
-    implements $LocaleGenCopyWith<$Res> {
-  factory _$$LocaleGenImplCopyWith(
-          _$LocaleGenImpl value, $Res Function(_$LocaleGenImpl) then) =
-      __$$LocaleGenImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool? includeUpdate});
-}
-
-/// @nodoc
-class __$$LocaleGenImplCopyWithImpl<$Res>
-    extends _$LocaleGenCopyWithImpl<$Res, _$LocaleGenImpl>
-    implements _$$LocaleGenImplCopyWith<$Res> {
-  __$$LocaleGenImplCopyWithImpl(
-      _$LocaleGenImpl _value, $Res Function(_$LocaleGenImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of LocaleGen
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? includeUpdate = freezed,
-  }) {
-    return _then(_$LocaleGenImpl(
-      includeUpdate: freezed == includeUpdate
-          ? _value.includeUpdate
-          : includeUpdate // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
+class $LocaleGenCopyWith<$Res> {
+  $LocaleGenCopyWith(LocaleGen _, $Res Function(LocaleGen) __);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$LocaleGenImpl implements _LocaleGen {
-  const _$LocaleGenImpl({this.includeUpdate});
-
-  factory _$LocaleGenImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LocaleGenImplFromJson(json);
-
-  @override
-  final bool? includeUpdate;
+class _LocaleGen implements LocaleGen {
+  const _LocaleGen();
+  factory _LocaleGen.fromJson(Map<String, dynamic> json) =>
+      _$LocaleGenFromJson(json);
 
   @override
-  String toString() {
-    return 'LocaleGen(includeUpdate: $includeUpdate)';
+  Map<String, dynamic> toJson() {
+    return _$LocaleGenToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LocaleGenImpl &&
-            (identical(other.includeUpdate, includeUpdate) ||
-                other.includeUpdate == includeUpdate));
+        (other.runtimeType == runtimeType && other is _LocaleGen);
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, includeUpdate);
-
-  /// Create a copy of LocaleGen
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LocaleGenImplCopyWith<_$LocaleGenImpl> get copyWith =>
-      __$$LocaleGenImplCopyWithImpl<_$LocaleGenImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
-  Map<String, dynamic> toJson() {
-    return _$$LocaleGenImplToJson(
-      this,
-    );
+  String toString() {
+    return 'LocaleGen()';
   }
 }
 
-abstract class _LocaleGen implements LocaleGen {
-  const factory _LocaleGen({final bool? includeUpdate}) = _$LocaleGenImpl;
-
-  factory _LocaleGen.fromJson(Map<String, dynamic> json) =
-      _$LocaleGenImpl.fromJson;
-
-  @override
-  bool? get includeUpdate;
-
-  /// Create a copy of LocaleGen
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LocaleGenImplCopyWith<_$LocaleGenImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

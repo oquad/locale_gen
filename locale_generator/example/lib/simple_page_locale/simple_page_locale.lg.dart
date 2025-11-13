@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -12,7 +13,8 @@ part 'simple_page_locale.lg.freezed.dart';
 part 'simple_page_locale.lg.g.dart';
 
 @freezed
-class SimplePageLocalePatch with _$SimplePageLocalePatch {
+abstract class SimplePageLocalePatch with _$SimplePageLocalePatch {
+  @JsonSerializable(converters: [])
   const factory SimplePageLocalePatch({
     String? title,
     String? subtitle,
