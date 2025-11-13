@@ -18,18 +18,17 @@ class LocaleGenerator extends GeneratorForAnnotation<LocaleGen> {
     if (definitions.length != 1) {
       return null;
     }
-    final constructor = definitions.first;
+    final constructor = definitions.first as ConstructorElement;
 
     String patchParameterToString(Element element) {
       if (element.kind != ElementKind.PARAMETER ||
-          element is! ParameterElement) {
+          element is! FormalParameterElement) {
         return '';
       }
-      final hasJsonKeyIgnore = element.metadata.any((annotation) {
+      final hasJsonKeyIgnore = element.metadata.annotations.any((annotation) {
         final annotationConstructor = annotation.computeConstantValue();
-        final isJsonKey = annotationConstructor?.type
-                ?.getDisplayString(withNullability: false) ==
-            'JsonKey';
+        final isJsonKey =
+            annotationConstructor?.type?.getDisplayString() == 'JsonKey';
         final hasExcludeFromJson =
             annotationConstructor?.getField('includeFromJson')?.toBoolValue() ==
                 false;
@@ -48,19 +47,19 @@ class LocaleGenerator extends GeneratorForAnnotation<LocaleGen> {
     final patchContents =
         constructor.children.map(patchParameterToString).join('\n');
 
-    final originalFile = element.librarySource!.shortName;
+    final String originalFile = buildStep.inputId.pathSegments.last;
+
     final filenameBase = originalFile.substring(0, originalFile.length - 5);
 
     String parameterToString(Element element) {
       if (element.kind != ElementKind.PARAMETER ||
-          element is! ParameterElement) {
+          element is! FormalParameterElement) {
         return '';
       }
-      final hasJsonKeyIgnore = element.metadata.any((annotation) {
+      final hasJsonKeyIgnore = element.metadata.annotations.any((annotation) {
         final annotationConstructor = annotation.computeConstantValue();
-        final isJsonKey = annotationConstructor?.type
-                ?.getDisplayString(withNullability: false) ==
-            'JsonKey';
+        final isJsonKey =
+            annotationConstructor?.type?.getDisplayString() == 'JsonKey';
         final hasExcludeFromJson =
             annotationConstructor?.getField('includeFromJson')?.toBoolValue() ==
                 false;
@@ -80,7 +79,7 @@ class LocaleGenerator extends GeneratorForAnnotation<LocaleGen> {
         constructor.children.map(parameterToString).join('\n');
 
     final originalAnnotations =
-        constructor.metadata.map(metadataToString).join('\n');
+        constructor.metadata.annotations.map(metadataToString).join('\n');
     return '''
     import 'package:freezed_annotation/freezed_annotation.dart';
     
